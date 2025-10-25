@@ -1,6 +1,6 @@
-# Claude Code - Linux System Administrator Configuration
+# claude-sysadm - Linux System Administrator Configuration
 
-**Replace your human system administrator with Claude Code** - a fully-capable, intelligent Linux system administrator that can install, configure, manage, and troubleshoot any software or system with the flexibility and expertise of a seasoned Linux professional.
+**Replace your human system administrator with claude-sysadm** - a fully-capable, intelligent Linux system administrator that can install, configure, manage, and troubleshoot any software or system with the flexibility and expertise of a seasoned Linux professional.
 
 ## What is Claude-Sysadm?
 
