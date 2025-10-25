@@ -1,47 +1,99 @@
 # Claude Code - Linux System Administrator Configuration
 
-Transform Claude Code into an intelligent Linux system administrator with this comprehensive configuration package. Automate server management, deployment, monitoring, and maintenance tasks using natural language.
+**Replace your human system administrator with Claude Code** - a fully-capable, intelligent Linux system administrator that can install, configure, manage, and troubleshoot any software or system with the flexibility and expertise of a seasoned Linux professional.
 
 ## What is Claude-Sysadm?
 
-Claude-Sysadm is a configuration framework that enables Claude Code to function as a knowledgeable Linux system administrator. It provides:
+Claude-Sysadm is **not just a tool** - it's a complete replacement for a human Linux system administrator. While traditional automation tools are limited to pre-programmed tasks, Claude-Sysadm brings the full reasoning capability and adaptability of Claude Code to server management.
 
-- **Automated System Discovery** - Automatically inventory hardware, software, services, and network configuration
-- **Website Deployment** - One-command deployment of websites with nginx reverse proxy and SSL certificates
-- **Health Monitoring** - Comprehensive system health checks with automated reporting
-- **Docker Management** - Full lifecycle management of Docker services
-- **SSL Certificate Management** - Automated SSL certificate deployment, monitoring, and renewal
-- **Persistent Memory** - Maintains system knowledge across sessions
-- **Natural Language Interface** - Describe what you want in plain English, no command memorization needed
+**Unlike rigid automation scripts, Claude-Sysadm can:**
+- Understand and execute complex, multi-step operations from natural language descriptions
+- Adapt to unique server configurations and edge cases
+- Learn from your server's specific setup and history
+- Troubleshoot issues by analyzing logs, testing hypotheses, and applying fixes
+- Install and configure any software - not just what's pre-scripted
+- Make intelligent decisions based on context and best practices
+- Respond to unexpected situations with human-like problem-solving
 
-## Features
+This repository provides a **starting framework** with ready-to-use commands that make Claude-Sysadm productive from the moment of installation. However, these are merely examples of what Claude can do - **not limitations**. Claude-Sysadm has the full capability to perform any Linux system administration task a human administrator could perform.
 
-### Automation Capabilities
-- ✅ Website setup (directory creation, nginx config, SSL certificate)
-- ✅ Service deployment (Docker Compose setup and management)
-- ✅ System discovery (installed packages, network topology, running services)
-- ✅ Health checks and monitoring
-- ✅ Backup verification
-- ✅ Log analysis
-- ✅ Security audits
-- ✅ SSL certificate lifecycle management
+### Core Philosophy
 
-### Intelligent Memory System
-Claude-Sysadm maintains persistent knowledge about your server:
-- System inventory (hardware, OS, installed tools)
-- Network topology (IPs, routing, open ports, DNS)
-- Service catalog (all services, health status, access URLs)
-- Scheduled tasks (cron jobs, systemd timers, maintenance windows)
-- Change history (complete audit trail of all operations)
+**Think of Claude-Sysadm as hiring a senior Linux system administrator who:**
+- Never forgets system details (persistent memory)
+- Works 24/7 without fatigue
+- Documents every change automatically
+- Follows best practices consistently
+- Can learn new technologies on-demand
+- Communicates in natural language
+- Never makes careless mistakes (always tests before applying changes)
+
+The included slash commands and automation scripts are **convenience features** - helpful shortcuts for common tasks. The real power is Claude's ability to handle **any** system administration task you can describe.
+
+## What Claude-Sysadm Can Actually Do
+
+**Everything a human system administrator can do**, including but not limited to:
+
+### Software Management (Beyond the Included Scripts)
+- Install, configure, and manage **any** software package or application
+- Build software from source with custom compilation flags
+- Manage package repositories and dependencies
+- Configure complex software stacks (LAMP, LEMP, Kubernetes, etc.)
+- Migrate applications between servers
+- Troubleshoot software conflicts and dependency issues
+
+### System Administration (Full Scope)
+- User and permission management
+- Kernel tuning and system optimization
+- Storage management (LVM, RAID, partitioning)
+- Backup and disaster recovery planning
+- System hardening and security audits
+- Performance analysis and optimization
+- Resource monitoring and capacity planning
+
+### Network Administration (Complete Capability)
+- Firewall configuration (iptables, nftables, ufw)
+- VPN setup and management (OpenVPN, WireGuard, IPSec)
+- DNS server configuration (BIND, dnsmasq)
+- Load balancer setup (HAProxy, nginx)
+- Network troubleshooting and diagnostics
+- VLAN and routing configuration
+
+### Service & Application Deployment (Unlimited)
+- Web servers (nginx, Apache, Caddy, Lighttpd)
+- Databases (PostgreSQL, MySQL/MariaDB, MongoDB, Redis)
+- Container orchestration (Docker, Kubernetes, Podman)
+- CI/CD pipelines (Jenkins, GitLab CI, GitHub Actions)
+- Monitoring stacks (Prometheus, Grafana, ELK)
+- **Any other service you can name**
+
+### The Included Scripts Are Just a Head Start
+
+This repository includes **5 pre-built slash commands** for common tasks:
+- `/sysadmin:discover` - System discovery and inventory
+- `/sysadmin:website` - Automated website deployment with nginx and SSL
+- `/sysadmin:ssl` - SSL certificate lifecycle management
+- `/sysadmin:health` - Comprehensive system health monitoring
+- `/sysadmin:docker` - Docker service lifecycle management
+
+**But you don't need these commands to use Claude-Sysadm.** They're convenience features that save time on frequent operations. For anything else, just describe what you need in natural language:
+
+- "Install PostgreSQL 15 with optimized settings for a 16GB RAM server"
+- "Set up a Kubernetes cluster with 3 worker nodes"
+- "Migrate this Apache configuration to nginx"
+- "Find out why the server is running slow and fix it"
+- "Set up automated offsite backups to S3"
+- "Configure fail2ban to protect SSH and ban aggressive scanners"
+
+Claude-Sysadm will understand, plan, and execute - just like a human sysadmin would.
 
 ## Installation
 
 ### Prerequisites
-- Ubuntu/Debian-based Linux server (tested on Ubuntu 25.04)
+- **Any Linux-based server** (Ubuntu, Debian, RedHat, CentOS, Fedora, Arch, etc.)
 - Claude Code CLI installed ([Get it here](https://claude.ai/code))
 - sudo access on the target server
-- (Optional) Docker for container management
-- (Optional) nginx for web service management
+- **That's it** - Claude can help you install anything else you need
 
 ### Quick Install
 
@@ -49,7 +101,7 @@ Use the automated installer:
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/claude-sysadm.git
+git clone https://github.com/tlarcombe/claude-sysadm.git
 cd claude-sysadm
 
 # Run the installer
@@ -99,15 +151,64 @@ chmod -R 700 ~/.claude/
    /sysadmin:discover
    ```
 
-3. **Verify Setup**: Check that memory files were populated:
-   ```bash
-   ls -la ~/.claude/memory/
-   cat ~/.claude/memory/system-inventory.md
-   ```
+3. **Start using natural language**: Claude-Sysadm is now ready to handle any system administration task you throw at it.
 
-## Usage
+## Usage - The Power of Natural Language
 
-### Available Slash Commands
+**You don't need to memorize commands or scripts.** Just tell Claude what you want in plain English (or any language Claude supports).
+
+### Beyond Pre-Scripted Commands
+
+While the included slash commands are useful shortcuts, Claude-Sysadm's real power is its ability to handle **any** system administration task through natural language.
+
+**Real-world examples:**
+
+"I need to set up a high-availability PostgreSQL cluster with automatic failover"
+- Claude will research the current best practices
+- Install and configure PostgreSQL with streaming replication
+- Set up Patroni or similar HA solution
+- Configure automatic failover
+- Test the setup
+- Document everything in memory files
+
+"Our website is loading slowly, figure out what's wrong and fix it"
+- Claude will check server resources (CPU, RAM, disk I/O)
+- Analyze web server logs and configuration
+- Check database query performance
+- Identify bottlenecks (e.g., missing indexes, inefficient queries)
+- Implement optimizations
+- Verify improvements
+- Document the issue and resolution
+
+"Install and configure a mail server with spam filtering and DKIM"
+- Claude will install Postfix/Dovecot
+- Configure SPF, DKIM, and DMARC
+- Set up SpamAssassin or rspamd
+- Configure SSL/TLS
+- Test email delivery
+- Document the configuration
+
+"Migrate our Docker setup to Kubernetes"
+- Claude will analyze your current Docker Compose files
+- Design an appropriate Kubernetes architecture
+- Write Kubernetes manifests (Deployments, Services, Ingress)
+- Set up persistent storage
+- Migrate data
+- Test the migration
+- Document the new architecture
+
+"The server got compromised last night, help me lock it down"
+- Claude will assess the damage
+- Review logs to understand the intrusion
+- Remove malicious files/backdoors
+- Patch vulnerabilities
+- Harden the system
+- Set up monitoring to prevent recurrence
+- Document the incident
+
+### The Included Slash Commands (Convenience Features)
+
+For frequently-performed tasks, we've included ready-to-use automation scripts:
 
 #### `/sysadmin:discover`
 Performs comprehensive system discovery and populates all memory files.
@@ -156,14 +257,6 @@ SSL certificate lifecycle management.
 /sysadmin:ssl test               # Test renewal process (dry run)
 ```
 
-**What it does:**
-- Lists all SSL certificates
-- Checks expiry dates
-- Identifies certificates expiring soon
-- Tests renewal process
-- Renews certificates manually or automatically
-- Creates maintenance reminders
-
 #### `/sysadmin:health [scope]`
 Comprehensive system health monitoring.
 
@@ -177,7 +270,7 @@ Comprehensive system health monitoring.
 - CPU usage and load average
 - Memory utilization
 - Disk space (all mounts)
-- Service status (nginx, docker, databases)
+- Service status
 - Docker container health
 - Network connectivity
 - Recent errors in logs
@@ -196,47 +289,41 @@ Full Docker service lifecycle management.
 /sysadmin:docker cleanup         # Clean up unused resources
 ```
 
-**What it does:**
-- Lists all Docker Compose projects
-- Shows service status and health
-- Manages service lifecycle (start/stop/restart)
-- Updates images and recreates containers
-- Views logs in real-time
-- Cleans up unused images, containers, volumes
-- Updates service catalog automatically
+### More Natural Language Examples
 
-### Natural Language Interface
+**Software Installation:**
+- "Install the latest stable version of Node.js with npm"
+- "Set up Python 3.11 with virtualenv and pip"
+- "Install Docker and Docker Compose"
+- "I need Redis with persistence enabled"
 
-You don't need to memorize slash commands. Just describe what you want:
+**Configuration Management:**
+- "Increase PHP memory limit to 512MB"
+- "Configure MySQL for optimal performance on this hardware"
+- "Set up automatic security updates"
+- "Enable HTTP/2 in nginx"
 
-**Website Deployment:**
-- "Create a website for my dashboard app on port 3000"
-- "Set up a new static site for my blog"
-- "Deploy a reverse proxy for my API service"
+**Security & Access:**
+- "Create a new user called 'deploy' with sudo access"
+- "Set up SSH key authentication and disable password login"
+- "Configure the firewall to only allow ports 22, 80, and 443"
+- "Show me all listening ports and what's using them"
 
-**Health Monitoring:**
-- "How is the server doing?"
-- "Check if everything is running OK"
-- "Are there any problems I should know about?"
+**Troubleshooting:**
+- "Why is disk usage at 95%? Clean up what's safe to remove"
+- "The database is using too much memory, investigate and fix"
+- "Check if we're under DDoS attack"
+- "Apache won't start, figure out why and fix it"
 
-**Service Management:**
-- "Restart the database service"
-- "Update all Docker containers"
-- "Show me the logs for the web application"
+**Monitoring & Maintenance:**
+- "Set up automated daily backups to /mnt/backup"
+- "Install and configure Prometheus and Grafana"
+- "Create a cron job to restart this service daily at 3 AM"
+- "Show me a summary of all logged errors from the past 24 hours"
 
-**SSL Certificates:**
-- "Check when SSL certificates expire"
-- "Renew the certificate for my website"
-- "Are any certificates expiring soon?"
+## Memory System - Claude's Permanent Knowledge
 
-**System Information:**
-- "What version of nginx is installed?"
-- "How much disk space is available?"
-- "Show me the network configuration"
-
-## Memory System
-
-Claude-Sysadm maintains persistent knowledge in `~/.claude/memory/`:
+Unlike traditional tools that start fresh each time, Claude-Sysadm maintains **persistent memory** of your server in `~/.claude/memory/`. This allows Claude to build institutional knowledge about your infrastructure over time.
 
 ### system-inventory.md
 - Hardware specifications (CPU, memory, storage)
@@ -244,16 +331,17 @@ Claude-Sysadm maintains persistent knowledge in `~/.claude/memory/`:
 - Installed tools and versions
 - Resource usage baselines
 - System capabilities
-- Missing tools that could be installed
+- Custom software and configurations
 
 ### network-topology.md
 - Network interfaces and IP addresses
 - Routing table
 - DNS configuration
-- NFS mounts and network storage
+- Network mounts and storage
 - Open ports and listening services
 - Firewall rules
-- Network security configuration
+- VPN configurations
+- Network security setup
 
 ### scheduled-tasks.md
 - Cron jobs (user and system)
@@ -261,86 +349,153 @@ Claude-Sysadm maintains persistent knowledge in `~/.claude/memory/`:
 - Backup schedules
 - Maintenance windows
 - SSL certificate renewal schedule
-- Upcoming maintenance reminders
+- Recurring maintenance tasks
+- Update schedules
 
 ### service-catalog.md
-- All deployed services (Docker and system)
+- All deployed services (Docker, systemd, and custom)
 - Service locations and configurations
 - Current status and health
 - Access URLs and ports
+- Dependencies
 - Update history
-- Service dependencies
+- Performance baselines
 
 ### recent-changes.md
-- Complete change log
+- Complete change log with timestamps
 - Configuration modifications
 - Service deployments and updates
 - Issue resolutions
 - Rollback instructions
+- Performance impacts
 - Monthly summaries
 
-## Examples
+**The memory system means:** Claude remembers your server's quirks, your preferences, past issues, and solutions. It learns from every interaction, becoming more valuable over time - just like a human sysadmin who's been managing your infrastructure for years.
 
-### Example 1: Deploy a New Web Service
+## Real-World Examples
 
-**User:** "I want to deploy a new web dashboard running on port 3000"
+### Example 1: Complete Application Stack Deployment
 
-**Claude Code automatically:**
-1. Creates nginx reverse proxy configuration
-2. Tests the configuration
-3. Enables the site
-4. Obtains SSL certificate from Let's Encrypt
-5. Verifies the deployment
-6. Updates service-catalog.md
-7. Logs the change in recent-changes.md
-8. Provides the HTTPS URL
+**User:** "Set up a production-ready WordPress site with nginx, PHP-FPM, MariaDB, Redis caching, automatic backups, and SSL"
 
-**Result:** Your dashboard is live at `https://dashboard.yourdomain.com` with automatic HTTPS.
+**Claude-Sysadm automatically:**
+1. Installs and configures nginx with optimal settings
+2. Installs PHP-FPM with required extensions
+3. Sets up MariaDB with secure configuration
+4. Installs and configures Redis for object caching
+5. Downloads and configures WordPress
+6. Generates nginx configuration with caching rules
+7. Obtains SSL certificate from Let's Encrypt
+8. Configures automated daily backups
+9. Sets up log rotation
+10. Implements security hardening
+11. Tests the entire stack
+12. Documents everything in memory files
+13. Provides access credentials and URLs
 
-### Example 2: System Health Check
+**Result:** Production-ready WordPress site in minutes, not hours.
 
-**User:** "Is the server healthy?"
+### Example 2: Security Incident Response
 
-**Claude Code automatically:**
-1. Checks CPU, memory, and disk usage
-2. Verifies all critical services are running
-3. Checks Docker container health
-4. Reviews recent error logs
-5. Verifies backup status
-6. Checks SSL certificate expiry
-7. Calculates overall health score
-8. Provides detailed report with recommendations
+**User:** "I'm seeing weird traffic patterns and high CPU usage. Investigate whether we're compromised and secure the server"
 
-**Result:** Comprehensive health report with actionable recommendations.
+**Claude-Sysadm automatically:**
+1. Checks currently running processes for anomalies
+2. Analyzes network connections for suspicious activity
+3. Reviews auth logs for unauthorized access attempts
+4. Scans for rootkits and malware
+5. Checks crontabs for malicious scheduled tasks
+6. Reviews file modifications in critical directories
+7. If compromise found: isolates the system, removes threats
+8. Hardens security (firewall rules, fail2ban, SSH hardening)
+9. Implements monitoring for similar threats
+10. Documents the incident and response
+11. Provides detailed report and recommendations
 
-### Example 3: Update a Service
+**Result:** Comprehensive security audit and remediation by an expert.
 
-**User:** "Update the Jellyfin media server to the latest version"
+### Example 3: Performance Optimization
 
-**Claude Code automatically:**
-1. Backs up the current docker-compose.yml
-2. Pulls the latest Jellyfin image
-3. Recreates the container with new image
-4. Verifies service is running properly
-5. Checks logs for errors
-6. Updates service-catalog.md with new version
-7. Logs the change in recent-changes.md
+**User:** "Our application is slow. Do a full performance analysis and optimize everything you can"
 
-**Result:** Service updated with full audit trail and verification.
+**Claude-Sysadm automatically:**
+1. Profiles CPU, memory, disk, and network usage
+2. Analyzes application logs for slow queries/requests
+3. Checks database for missing indexes
+4. Reviews web server configuration
+5. Tests network latency and bandwidth
+6. Identifies bottlenecks (e.g., slow disk I/O)
+7. Implements optimizations:
+   - Tunes database configuration
+   - Optimizes web server settings
+   - Adds caching layers
+   - Fixes slow queries
+   - Adjusts system parameters
+8. Measures improvements
+9. Documents changes and performance gains
+
+**Result:** Measurably faster application with documented improvements.
+
+### Example 4: Infrastructure Migration
+
+**User:** "Migrate all our services from this server to the new server at 192.168.1.50, keeping everything running during the migration"
+
+**Claude-Sysadm automatically:**
+1. Inventories all services on source server
+2. Plans migration strategy for zero downtime
+3. Prepares target server (installs required software)
+4. Backs up all data and configurations
+5. Migrates databases with replication
+6. Transfers application files
+7. Replicates configurations
+8. Tests services on target server
+9. Performs cutover (updates DNS, changes load balancer)
+10. Monitors for issues
+11. Verifies migration success
+12. Documents new infrastructure layout
+
+**Result:** Seamless migration managed by an experienced professional.
+
+## Why Claude-Sysadm is Different
+
+### Traditional Automation vs. Claude-Sysadm
+
+| Traditional Tools | Claude-Sysadm |
+|-------------------|---------------|
+| Limited to pre-written scripts | Can handle any task you describe |
+| Rigid, can't adapt to edge cases | Adapts to unique situations |
+| Requires programming skills | Natural language interface |
+| No understanding of context | Understands your environment and history |
+| Can't troubleshoot unexpected issues | Debugs and solves problems like a human |
+| Fixed capabilities | Learns and grows with your needs |
+| No memory between runs | Maintains persistent knowledge |
+| One-size-fits-all approach | Customizes to your specific setup |
+
+### The Human Element
+
+Claude-Sysadm brings **human-like reasoning** to server management:
+
+- **Contextual awareness**: Understands your server's history and configuration
+- **Problem-solving**: Can troubleshoot issues by testing hypotheses
+- **Learning**: Improves its understanding of your infrastructure over time
+- **Communication**: Explains what it's doing and why
+- **Judgment**: Makes decisions based on best practices and your specific situation
+- **Adaptability**: Handles unexpected situations gracefully
+- **Documentation**: Automatically documents all work
 
 ## Directory Structure
 
 ```
 claude-sysadm/
 ├── .claude/
-│   ├── commands/                 # Slash commands
+│   ├── commands/                 # Optional convenience commands
 │   │   ├── sysadmin-discover.md  # System discovery
 │   │   ├── sysadmin-website.md   # Website deployment
 │   │   ├── sysadmin-ssl.md       # SSL management
 │   │   ├── sysadmin-health.md    # Health monitoring
 │   │   └── sysadmin-docker.md    # Docker management
 │   │
-│   └── memory/                   # Persistent knowledge
+│   └── memory/                   # Persistent knowledge base
 │       ├── system-inventory.md   # Hardware, OS, tools
 │       ├── network-topology.md   # Network configuration
 │       ├── scheduled-tasks.md    # Cron, timers, schedules
@@ -357,174 +512,189 @@ claude-sysadm/
 ## Best Practices
 
 ### 1. Run Discovery First
-After installation, always run `/sysadmin:discover` to populate memory files with your actual system configuration.
+After installation, run `/sysadmin:discover` to populate Claude's memory with your server's current state.
 
-### 2. Regular Health Checks
-Schedule regular health checks to catch issues early:
-```
-/sysadmin:health full
-```
+### 2. Be Specific When Needed, General When Appropriate
+- Specific: "Install PostgreSQL 14 with these custom settings: max_connections=200, shared_buffers=4GB"
+- General: "Set up a secure mail server" (Claude will choose appropriate software and configuration)
 
-### 3. Review Change Log
-Periodically review `recent-changes.md` to maintain awareness of all system modifications.
+### 3. Review Change Log Regularly
+Check `recent-changes.md` to see what Claude has been doing on your server.
 
-### 4. Keep Memory Files Updated
-Memory files are automatically updated by commands, but verify accuracy periodically.
+### 4. Leverage Persistent Memory
+Claude remembers previous conversations and work. Reference past tasks: "Use the same configuration we used for the staging server"
 
-### 5. Use Natural Language
-Don't memorize commands - describe what you want in plain English. Claude Code will figure out the right approach.
+### 5. Ask Claude to Explain
+If you're unsure about something: "Explain what you're going to do before you do it"
 
-### 6. Test Before Production
-Test new procedures in a development environment before applying to production servers.
+### 6. Test in Development First
+For critical infrastructure, test changes in a dev environment: "Show me what you would do, but don't apply it yet"
 
-### 7. Maintain Backups
-Ensure regular backups are configured and verified. Use Claude Code to check backup status.
+### 7. Use Claude for Learning
+"Explain how to set up X" or "What's the best practice for Y?" - Claude is also an excellent teacher.
 
 ## Security Considerations
 
-### Sudo Password
-The configuration can include sudo password for full automation. This is appropriate for:
-- Test/lab environments
-- Trusted single-user servers
-- Development environments
+### Sudo Access
+Claude-Sysadm needs sudo access to perform system administration tasks - just like a human sysadmin would.
 
-For production environments:
-- Remove password from CLAUDE.md (Claude will prompt)
-- Use `NOPASSWD` in sudoers for specific commands
-- Use a dedicated automation account with limited privileges
+**Configuration options:**
+- **Include password in CLAUDE.md**: Full automation (appropriate for test/lab/single-user environments)
+- **Prompt for password**: Claude will ask when needed (good for production)
+- **NOPASSWD sudo**: Configure sudoers for passwordless sudo (balance of convenience and security)
 
 ### File Permissions
-Ensure proper permissions:
+Protect configuration files:
 ```bash
-chmod 600 ~/CLAUDE.md          # Protect main config
-chmod -R 700 ~/.claude/        # Protect all Claude files
+chmod 600 ~/CLAUDE.md          # Only you can read it
+chmod -R 700 ~/.claude/        # Only you can access Claude's files
 ```
 
-### Secrets Management
-- Never store API keys or passwords in CLAUDE.md
-- Use environment variables for sensitive data
-- Protect .env files with appropriate permissions
-- Rotate credentials regularly
-
 ### Audit Trail
-All changes are logged in `recent-changes.md` for security auditing.
+Every action is logged in `recent-changes.md` - you have a complete audit trail of all system modifications.
+
+### Claude's Safety Features
+- Always tests configurations before applying (e.g., `nginx -t`)
+- Asks for confirmation on destructive operations by default
+- Documents rollback procedures for changes
+- Follows security best practices
+- Never exposes sensitive data unnecessarily
 
 ## Troubleshooting
 
 ### Commands Not Found
 If slash commands don't work:
 1. Verify `~/.claude/commands/` exists and contains .md files
-2. Check file permissions are readable
-3. Restart Claude Code
+2. Restart Claude Code
+3. **Remember**: You don't need slash commands - just use natural language
 
 ### Memory Not Persisting
 If memory files aren't being updated:
 1. Check `~/.claude/memory/` directory exists and is writable
 2. Verify disk space is available
-3. Check for permission issues
+3. Check file permissions
 
 ### Sudo Operations Fail
-If sudo operations fail:
 1. Verify user has sudo privileges: `sudo -l`
-2. Check password in CLAUDE.md is correct (if using)
-3. Consider NOPASSWD for specific commands
+2. Check password in CLAUDE.md if using
+3. Try manual sudo to confirm it works
 
-### Discovery Doesn't Find Services
-If `/sysadmin:discover` misses services:
-1. Ensure services are actually running
-2. Check paths in CLAUDE.md match actual locations
-3. Verify permissions to read service files
+### Claude Seems Limited
+If Claude seems unable to do something:
+- Be more specific about what you want
+- Ask "Can you help me with X?" before assuming it can't
+- Remember: Claude can do anything a human sysadmin can do
 
-## Customization
+## Extending Claude-Sysadm
 
-### Adding Custom Commands
-Create new commands in `~/.claude/commands/`:
+### Adding Your Own Convenience Commands
+
+Create custom slash commands for tasks you do frequently:
 
 ```bash
-cat > ~/.claude/commands/mycommand.md <<'EOF'
-# My Custom Command
+cat > ~/.claude/commands/deploy-myapp.md <<'EOF'
+# Deploy MyApp
 
-Your command description and instructions here.
-
-Arguments: $ARGUMENTS
+Deploy the MyApp application with all dependencies.
 
 ## Steps
-1. First step
-2. Second step
-3. Third step
+1. Pull latest code from Git
+2. Install dependencies
+3. Run database migrations
+4. Restart services
+5. Verify deployment
 EOF
 ```
 
-### Extending Memory
-Add custom memory files for specific tracking needs:
+### Customizing CLAUDE.md
 
-```bash
-cat > ~/.claude/memory/custom-tracking.md <<'EOF'
-# Custom Tracking
-
-Your custom data structure here.
-EOF
-```
-
-### Modifying CLAUDE.md
 Edit `~/CLAUDE.md` to add:
+- Your organization's standards and procedures
+- Specific server configurations
 - Custom workflows
-- Application-specific procedures
-- Team processes
-- Environment-specific configurations
+- Team conventions
+- Application-specific knowledge
+
+This makes Claude even more tailored to your environment.
 
 ## Multiple Servers
 
-To use Claude-Sysadm on multiple servers:
+Deploy Claude-Sysadm to all your servers:
 
-1. Install on each server
-2. Run `/sysadmin:discover` on each
-3. Each server maintains its own memory files
-4. Update CLAUDE.md with server-specific details
+```bash
+# On each server
+git clone https://github.com/tlarcombe/claude-sysadm.git
+cd claude-sysadm
+./install.sh
+```
+
+Each server maintains its own memory, but Claude can help you manage multiple servers: "Check the disk space on all application servers" or "Deploy this configuration to prod-web-01, prod-web-02, and prod-web-03"
 
 ## Contributing
 
-Contributions are welcome! To contribute:
+We welcome contributions! This project demonstrates what's possible when AI meets system administration.
 
+**Areas for contribution:**
+- Additional convenience commands for common tasks
+- Integration with monitoring/alerting platforms
+- Support for specific Linux distributions
+- Documentation improvements
+- Real-world usage examples
+
+**To contribute:**
 1. Fork the repository
 2. Create a feature branch
-3. Test your changes thoroughly
+3. Test thoroughly
 4. Submit a pull request with detailed description
-
-Areas for contribution:
-- New slash commands
-- Additional monitoring capabilities
-- Support for more Linux distributions
-- Integration with other tools
-- Documentation improvements
 
 ## Support
 
 ### Getting Help
-- Check `CLAUDE.md` for server-specific documentation
+
+- **Ask Claude directly**: "How do I...?" - Claude can help you use Claude-Sysadm
+- Check `CLAUDE.md` for system-specific documentation
 - Review memory files for current system state
-- Ask Claude Code directly: "How do I...?"
-- Check the issue tracker on GitHub
+- Check the [issue tracker](https://github.com/tlarcombe/claude-sysadm/issues)
 
 ### Reporting Issues
+
 When reporting issues, include:
-- Your Linux distribution and version
+- Linux distribution and version
 - Output of `/sysadmin:discover`
-- Contents of relevant memory files
-- Steps to reproduce the issue
-- Error messages or logs
+- What you tried and what happened
+- Any error messages
+
+## Frequently Asked Questions
+
+**Q: Can Claude-Sysadm really do anything a human sysadmin can do?**
+A: Yes. Claude has the same problem-solving capabilities, can read documentation, follow tutorials, and adapt to situations just like a human. The included scripts are just conveniences - not limitations.
+
+**Q: What if I need to do something not covered by the slash commands?**
+A: Just describe it in natural language. The slash commands are optional shortcuts, not requirements.
+
+**Q: Can Claude-Sysadm learn our company's specific procedures?**
+A: Absolutely. Add your procedures to CLAUDE.md, and Claude will follow them. Claude also learns from the work it does via persistent memory.
+
+**Q: Is it safe to give Claude sudo access?**
+A: Claude has safety features (testing before applying, asking for confirmation, documenting changes). Many users trust Claude with root access. Use the authentication method that matches your risk tolerance.
+
+**Q: Can Claude work with software it hasn't seen before?**
+A: Yes. Claude can read documentation, analyze configurations, and figure out how to work with new software - just like a human sysadmin learning a new tool.
+
+**Q: How is this different from Ansible/Puppet/Chef?**
+A: Those are excellent tools for codified, repeatable automation. Claude-Sysadm is for the flexible, adaptive, problem-solving work that humans do. Use both together.
 
 ## Roadmap
 
-Planned features:
-- [ ] Support for RedHat/CentOS/Fedora
-- [ ] Apache web server support
-- [ ] PostgreSQL database management
-- [ ] Kubernetes cluster management
-- [ ] Automated security scanning
-- [ ] Performance optimization suggestions
-- [ ] Cloud provider integration (AWS, GCP, Azure)
-- [ ] Multi-server orchestration
+**Potential future enhancements:**
+- Pre-built commands for more specific scenarios
+- Integration with popular monitoring platforms
+- Multi-server orchestration scripts
+- Disaster recovery playbooks
+- Security compliance automation
+- Cloud provider integrations
+
+**But remember**: Claude-Sysadm can already do all of these things through natural language. The roadmap is about adding convenience features, not capabilities.
 
 ## License
 
@@ -533,21 +703,19 @@ MIT License - See LICENSE file for details
 ## Acknowledgments
 
 - Built for [Claude Code](https://claude.ai/code) by Anthropic
-- Inspired by modern DevOps practices
-- Designed for system administrators who value automation
+- Inspired by the reality that senior system administrators are expensive and hard to find
+- Designed to democratize expert system administration
 
-## Version History
+## The Bottom Line
 
-- **v1.0.0** (2025-10-25): Initial public release
-  - Core sysadmin commands
-  - Memory system
-  - Automated website deployment
-  - SSL management
-  - Health monitoring
-  - Docker management
+**Claude-Sysadm is not a limited automation tool. It's a full-capability system administrator that happens to be AI.**
+
+The included commands are training wheels - helpful when you're getting started, but not necessary once you understand what Claude can do.
+
+Ask Claude to do system administration work the same way you'd ask a human sysadmin. Claude will understand, plan, execute, and document - just like a senior Linux professional.
 
 ---
 
-**Ready to transform Claude Code into your system administrator?**
+**Ready to replace your human system administrator?**
 
-[Install Now](#installation) | [Quick Start Guide](QUICKSTART.md) | [Report Issue](https://github.com/yourusername/claude-sysadm/issues)
+[Install Now](#installation) | [Quick Start Guide](QUICKSTART.md) | [Report Issue](https://github.com/tlarcombe/claude-sysadm/issues) | [View on GitHub](https://github.com/tlarcombe/claude-sysadm)
