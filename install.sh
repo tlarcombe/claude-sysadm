@@ -107,6 +107,58 @@ print_success "Installed slash commands to ~/.claude/commands/"
 cp .claude/memory/*.md "$HOME/.claude/memory/" 2>/dev/null || true
 print_success "Installed memory templates to ~/.claude/memory/"
 
+# Create claude-sysadm wrapper command
+print_header "Creating claude-sysadm Command"
+
+# Determine the best location for the binary
+if [ -d "$HOME/.local/bin" ]; then
+    BIN_DIR="$HOME/.local/bin"
+elif [ -d "$HOME/bin" ]; then
+    BIN_DIR="$HOME/bin"
+else
+    # Create ~/.local/bin if neither exists
+    BIN_DIR="$HOME/.local/bin"
+    mkdir -p "$BIN_DIR"
+    print_info "Created $BIN_DIR directory"
+fi
+
+# Create the wrapper script
+cat > "$BIN_DIR/claude-sysadm" << 'EOF'
+#!/bin/bash
+# Claude-Sysadm - System Administrator Mode
+# Runs Claude Code with automatic permission approval for system administration tasks
+
+exec claude --dangerously-skip-permissions "$@"
+EOF
+
+chmod +x "$BIN_DIR/claude-sysadm"
+print_success "Created claude-sysadm command in $BIN_DIR"
+
+# Check if the directory is in PATH
+if [[ ":$PATH:" == *":$BIN_DIR:"* ]]; then
+    print_success "$BIN_DIR is already in your PATH"
+else
+    print_warning "$BIN_DIR is not in your PATH"
+    print_info "Add this to your ~/.bashrc or ~/.zshrc:"
+    echo "    export PATH=\"\$HOME/.local/bin:\$PATH\""
+    echo ""
+
+    # Offer to add it automatically
+    read -p "Would you like to add it to your ~/.bashrc now? (y/n) " -n 1 -r
+    echo
+    if [[ $REPLY =~ ^[Yy]$ ]]; then
+        if [ -f "$HOME/.bashrc" ]; then
+            echo "" >> "$HOME/.bashrc"
+            echo "# Added by claude-sysadm installer" >> "$HOME/.bashrc"
+            echo "export PATH=\"$BIN_DIR:\$PATH\"" >> "$HOME/.bashrc"
+            print_success "Added $BIN_DIR to ~/.bashrc"
+            print_info "Run: source ~/.bashrc (or restart your shell)"
+        else
+            print_warning "~/.bashrc not found, please add to your shell config manually"
+        fi
+    fi
+fi
+
 # Verify installation
 print_header "Verifying Installation"
 
@@ -133,6 +185,13 @@ if [ ! -d "$HOME/.claude/memory" ]; then
 else
     mem_count=$(ls -1 "$HOME/.claude/memory"/*.md 2>/dev/null | wc -l)
     print_success "$mem_count memory files installed"
+fi
+
+if [ -x "$BIN_DIR/claude-sysadm" ]; then
+    print_success "claude-sysadm command created"
+else
+    print_error "claude-sysadm command not found or not executable"
+    ((errors++))
 fi
 
 if [ $errors -gt 0 ]; then
@@ -189,8 +248,11 @@ echo ""
 echo "  1. Review and customize ~/CLAUDE.md:"
 echo "     \$ nano ~/CLAUDE.md"
 echo ""
-echo "  2. Start Claude Code:"
+echo "  2. Start Claude-Sysadm (with auto-approval):"
 echo "     \$ cd ~"
+echo "     \$ claude-sysadm"
+echo ""
+echo "     Or use standard Claude Code (prompts for approval):"
 echo "     \$ claude"
 echo ""
 echo "  3. Run system discovery:"
@@ -200,6 +262,10 @@ echo "  4. Try a natural language request:"
 echo "     > Check the system health"
 echo "     > Show me all running services"
 echo "     > What SSL certificates do we have?"
+echo ""
+print_info "Commands:"
+echo "  • claude-sysadm - Run with automatic permission approval (recommended for sysadmin)"
+echo "  • claude - Run with manual permission approval (safer for testing)"
 echo ""
 print_info "Available commands:"
 echo "  • /sysadmin:discover - System discovery and inventory"
