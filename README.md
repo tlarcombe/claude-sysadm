@@ -114,6 +114,7 @@ The installer will:
 3. Set proper permissions
 4. Initialize memory files
 5. Create CLAUDE.md in your home directory
+6. Install `claude-sysadm` command for automatic permission approval
 
 ### Manual Install
 
@@ -141,10 +142,10 @@ chmod -R 700 ~/.claude/
    - Configure sudo password (or leave blank for manual entry)
    - Adjust paths to match your server layout
 
-2. **Run Initial Discovery**: Start Claude Code and run system discovery:
+2. **Run Initial Discovery**: Start Claude-Sysadm and run system discovery:
    ```bash
    cd ~
-   claude
+   claude-sysadm
    ```
    Then in Claude Code:
    ```
@@ -152,6 +153,34 @@ chmod -R 700 ~/.claude/
    ```
 
 3. **Start using natural language**: Claude-Sysadm is now ready to handle any system administration task you throw at it.
+
+### Running Claude-Sysadm
+
+The installer creates two ways to run Claude Code:
+
+**`claude-sysadm` (Recommended for System Administration)**
+```bash
+claude-sysadm
+```
+- Runs with `--dangerously-skip-permissions` flag
+- Automatically approves all actions without prompting
+- Perfect for trusted system administration tasks
+- Claude can work autonomously without interruption
+- Full automation - just describe what you want done
+
+**`claude` (Standard Mode)**
+```bash
+claude
+```
+- Prompts for approval before each action
+- Safer for testing or when you want to review each step
+- Good for learning what Claude will do
+- Can interrupt or modify actions before they execute
+
+**Which should you use?**
+- Use `claude-sysadm` when you trust Claude to manage your server (most system administration tasks)
+- Use `claude` when testing new procedures or learning what Claude does
+- Both commands access the same configuration and memory files
 
 ## Usage - The Power of Natural Language
 
@@ -535,6 +564,24 @@ For critical infrastructure, test changes in a dev environment: "Show me what yo
 
 ## Security Considerations
 
+### The `claude-sysadm` Command
+
+The installer creates a `claude-sysadm` command that runs Claude Code with automatic permission approval (`--dangerously-skip-permissions`). This means Claude can execute commands without asking for confirmation.
+
+**When to use `claude-sysadm`:**
+- Trusted environments (your own servers)
+- Routine system administration tasks
+- When you want full automation
+- After you're comfortable with how Claude works
+
+**When to use standard `claude`:**
+- First time using Claude-Sysadm
+- Testing new procedures
+- Production servers where you want oversight
+- When learning what Claude will do
+
+**Security note:** The `claude-sysadm` command is designed for administrators who trust Claude to manage their infrastructure. Claude has built-in safety features (tests before applying, follows best practices, documents all changes), but automatic approval means you won't review each action. Use standard `claude` mode if you prefer manual approval.
+
 ### Sudo Access
 Claude-Sysadm needs sudo access to perform system administration tasks - just like a human sysadmin would.
 
@@ -683,6 +730,12 @@ A: Yes. Claude can read documentation, analyze configurations, and figure out ho
 
 **Q: How is this different from Ansible/Puppet/Chef?**
 A: Those are excellent tools for codified, repeatable automation. Claude-Sysadm is for the flexible, adaptive, problem-solving work that humans do. Use both together.
+
+**Q: What's the difference between `claude-sysadm` and `claude`?**
+A: `claude-sysadm` runs with automatic permission approval (--dangerously-skip-permissions), so Claude can work without asking for confirmation on each action. Standard `claude` prompts you to approve each operation. Use `claude-sysadm` for trusted system administration, use `claude` when you want oversight.
+
+**Q: Is it safe to use `claude-sysadm` with auto-approval?**
+A: Claude has built-in safety features (tests before applying, follows best practices, documents everything). Use `claude-sysadm` in environments where you trust Claude to manage the server. For production or when learning, start with standard `claude` mode.
 
 ## Roadmap
 
