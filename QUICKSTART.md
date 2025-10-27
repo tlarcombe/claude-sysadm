@@ -22,11 +22,11 @@ Edit `~/CLAUDE.md` and update:
 nano ~/CLAUDE.md
 ```
 
-**Change these values:**
-- Line 13: Sudo password (or remove if you'll enter manually)
-- Line 7-8: Server hostname (if different from grathsrv05)
-- Line 52+: Domain name (if not using larcombe.tech)
-- Line 10: NFS server IP (if different from 192.168.1.8)
+**Consider entering this information:**
+- Sudo password 
+- Server hostname
+- Domain name
+- Subnet
 
 **Save and exit:** Ctrl+X, Y, Enter
 
